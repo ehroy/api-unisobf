@@ -1,0 +1,139 @@
+const fs = require("fs");
+const fetch = require("node-fetch");
+const { HttpsProxyAgent } = require("https-proxy-agent");
+const chalk = require("chalk");
+const delay = require("delay");
+const readline = require("readline-sync");
+const url = "https://public-ubiservices.ubi.com/v3";
+const queryFilePath = "auth.txt";
+const proxy = "proxy.txt";
+
+function log(msg, type = "info") {
+  const timestamp = new Date().toLocaleTimeString();
+  switch (type) {
+    case "success":
+      console.log(`[${timestamp}] ➤  ${chalk.green(msg)}`);
+      break;
+    case "custom":
+      console.log(`[${timestamp}] ➤  ${chalk.magenta(msg)}`);
+      break;
+    case "error":
+      console.log(`[${timestamp}] ➤  ${chalk.red(msg)}`);
+      break;
+    case "warning":
+      console.log(`[${timestamp}] ➤  ${chalk.yellow(msg)}`);
+      break;
+    default:
+      console.log(`[${timestamp}] ➤  ${msg}`);
+  }
+}
+function readQueryIdsFromFile() {
+  try {
+    const queryContent = fs.readFileSync(queryFilePath, "utf-8");
+    return queryContent
+      .split("\n")
+      .map((query) => query.trim())
+      .filter((query) => query); // Ensure to remove extra newlines or spaces
+  } catch (error) {
+    console.error(chalk.red(`Error reading ${queryFilePath}:`), error);
+    return [];
+  }
+}
+async function makeRequest(url, body = null, headers = {}, proxy = null) {
+  return new Promise((resolve, reject) => {
+    // Tentukan opsi untuk fetch
+    const options = {
+      method: body ? "POST" : "GET",
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+        "Content-Type": "application/json",
+        "ubi-appid": "45d80707-deeb-40d6-b5b5-9be96631e90e",
+        "sec-fetch-site": "cross-site",
+        "accept-language": "id-ID,id;q=0.9",
+        "sec-fetch-mode": "cors",
+        origin: "https://overlay.cdn.ubisoft.com",
+        "sec-fetch-dest": "empty",
+        ...headers,
+      },
+      body: body ? body : undefined,
+    };
+
+    // Jika proxy disediakan, atur agent
+    if (proxy) {
+      options.agent = new HttpsProxyAgent(
+        `http://brd-customer-hl_7da2a2da-zone-zone6-country-id-session-${
+          (1000000 * Math.random()) | 0
+        }:5omkljmze92i@zproxy.lum-superproxy.io:22225`
+      );
+    }
+
+    fetch(url, options)
+      .then((response) => {
+        // Validasi status response
+
+        return response.text();
+      })
+      .then((data) => resolve(data)) // Resolving the promise with data
+      .catch((error) => {
+        reject(error); // Rejecting the promise with error
+      });
+  });
+}
+
+(async () => {
+  const queryContent = fs.readFileSync(proxy, "utf-8");
+  const proxynew = queryContent ? queryContent : null;
+  const CheckvalidateEmail = await makeRequest(
+    url + "/users/validateCreation",
+    JSON.stringify({
+      email: "anjaykoko69+koanosa80@gmail.com",
+      password: "Kaserinas123@",
+      age: "28",
+      country: "ID",
+      preferredLanguage: "en",
+      legalOptinsKey:
+        "eyJ2dG91IjoiMi4wIiwidnBwIjoiMi4wIiwidnRvcyI6IjIuMSIsImx0b3UiOiJpZC1JRCIsImxwcCI6ImlkLUlEIiwibHRvcyI6ImVuLUlOVEwifQ",
+    }),
+    { "Ubi-RequestedPlatformType": "uplay" },
+    proxynew
+  );
+  if (CheckvalidateEmail.includes('{"validationReports":[]}')) {
+    log("success validation email", "succes");
+    const RequestOtp = await makeRequest(
+      url + "/users/validationCodes/email",
+      JSON.stringify({
+        email: "anjaykoko69+koanosa80@gmail.com",
+        context: "USER_CREATION",
+      }),
+      { "Ubi-RequestedPlatformType": "uplay" },
+      proxynew
+    );
+    const otp = readline.question("masukan otp : ");
+    const Regist = await makeRequest(
+      url + "/users",
+      JSON.stringify({
+        email: "anjaykoko69+koanosa80@gmail.com",
+        password: "Kaserinas123@",
+        emailValidationCode: otp,
+        age: "28",
+        country: "ID",
+        preferredLanguage: "en",
+        legalOptinsKey:
+          "eyJ2dG91IjoiMi4wIiwidnBwIjoiMi4wIiwidnRvcyI6IjIuMSIsImx0b3UiOiJpZC1JRCIsImxwcCI6ImlkLUlEIiwibHRvcyI6ImVuLUlOVEwifQ",
+      }),
+      {
+        "ubi-requestedplatformtype": "uplay",
+        genomeid: "de726b45-417f-476f-a3ba-d0c032a9ef2e",
+      },
+      proxynew
+    );
+    if (Regist.includes('"ticket"')) {
+      log("regist success", "success");
+    } else {
+      log("regist failed !!!", "error");
+    }
+  } else {
+    log("validation email failed !!!", "error");
+  }
+})();
