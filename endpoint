@@ -1,0 +1,56 @@
+//login
+curl 'https://public-ubiservices.ubi.com/v3/profiles/sessions' \
+  -H 'accept: application/json' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'authorization: Basic YW5qYXlrb2tvNjkrZGVub29rOUBnbWFpbC5jb206S2FzZXJpbmFzMTIzQA==' \
+  -H 'content-type: application/json' \
+  -H 'origin: https://connect.ubisoft.com' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://connect.ubisoft.com/' \
+  -H 'sec-ch-ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'ubi-appid: afb4b43c-f1f7-41b7-bcef-a635d8c83822' \
+  -H 'ubi-requestedplatformtype: uplay' \
+  -H 'ubi-transactionid: 51ffc1a6-bfa8-42b6-8319-4bcc5f5616a1' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \
+  --data-raw '{"rememberMe":true}'
+//respone
+{
+    "platformType": "uplay",
+    "ticket": "ewogICJ2ZXIiOiAiMSIsCiAgImFpZCI6ICJhZmI0YjQzYy1mMWY3LTQxYjctYmNlZi1hNjM1ZDhjODM4MjIiLAogICJlbnYiOiAiUHJvZCIsCiAgInNpZCI6ICIzYmM4YTA3Ni00Njc0LTQ3M2QtOTMzYi0yZDBiNmRmODMxZjQiLAogICJ0eXAiOiAiSldFIiwKICAiZW5jIjogIkExMjhDQkMiLAogICJpdiI6ICJMYVhuMDhHdTZEOWVPTUEtQlRQb19BIiwKICAiaW50IjogIkhTMjU2IiwKICAia2lkIjogIjBjNjlhMGE1LWZjZjQtNDY3ZC05ZThkLTgyZWMzZDkzY2EzZSIKfQ.HNP1JqYlKULeadnSWegjd8QSF4mQVH8Wg8NbKV42qoElRESm_g4tC4aTCU5xTtgBOtFlWkGeiYsBy6erXLYKYSCqGJpTLUliTdd2xwHFgYZGm2Jpe0w8KUaqx6ZFdCVX7o7x7pNM0NnhhX5mWnIxPNR6K67I8DpoCF3S5wJJ_qI7Mb7WI8ZXXH9YxELwZV1tTyFTZaHLwKDTV_11xGSB0rH6YlweMEoUZgIC1bG9Erh018zhWr6jeBSWlSZoNLOVxIpm8HWEuZkbkAfdis3Aj40rL5jICWAlvPW_oDWq-ygkjagP6b3Qvc2RMs2clWrq3sbEiO1v3XObnKcntOUEuNGbpyLl_5xhKw7rWSYeh-ev07RhXq636T-Dy7yOv-A6pTPSf_zPnwiM2dGJp4HBbbgaVtFgc3M9fcv2p7k7iJUyAxVmuP2hQO-QGnPNAu7psid5uJC8ZWNBZyagTErdkGNEIY21Hr24LlBrYYGOG1DrHDJI1vQ3h43AyQ7qjkv4skHbx_FOp81tHbHJU9RxbGXXANcwBx19iuWiNnGF9Cf5oZ0JMUQkDWyHkcMjYwkOntRc9iYEpQfudpZZ1yYg-4-9AG216L_PpO7czGusmDC6n2BZl9qzgrOpJxXx9mJVVuDJ7N3EtHLVLXfywy3wq-h8Th4mtNaDGlUUz4PxSyrVF2Xj2Hj9LNmxtwjoJXP9GKcwISvwU2QtjzR_sQBmfrXIzisRVJ97cQ020RLCT1VRbf6m-NCLJuZtA1IlZsd6iflr1flE-S1wGIax9rX6ftQrg9GwA_1RPaivj3aGbiS27nZLcrrC_qM5lPj10uLyPEBwt2H7o7H4MWiX0YZC4yh9szNZpPNKM2XeqciRUNHf9UMnkPDKmthCeXa-L3mrq8TcrPd2qrBWefAS3oXqupm46w5TU8OUwAulM3Ql_iQ0ypPq46m0fcqfe0MM5W5EG1-E6pLe9plab9CV0Lv53q4bOsrdBEl1kp0abd5AWJ8hPicW0CoNLBsIcRE3sYXgvkq5pet4yqe5q7ueNjeru73RTyJ2Yh35QWj94ta_Zl3qU4DFMngcjkDFgMYmwXyBTjnCzbxccqYPrzrc6bl4Xgu9Ufcim9fczP1n_U8xjnYp_rAqw3uEudEUVrqPKcR2Z8CTBkX-Zq3IpErJ6eglgwBdbTbYLLZeoVp7SlvXq_N2u31BhxqD9aZp_DDJPu0YQCj_S3udvvqzS-MMIdVO-B7rbHk3HSAjHOwDiakUh_Nk76BsxPVcbvpRkdTBoHOmrvw8_WhoV-xEQZEee5lbNHm0lbr3OF6BrxcZXrwj85b0zWhQwyf2xpqP1EVTO-EISFUnv42RgoFuDJT06TuRpvPNi71LbR_exrnaMiXxltvywYQL36xIrUZThNLpKyGCrnYkpiWgfPnj6fprao8kmpvyB-EtkNc93ENX9tHqjSuZaEl7cdphNi-sC9tjvx4SFjcZtfQD5BszLEwx9pfrcnhglHRg0D_8VeXVCWV_72K7uQO23KAWwIAFUWhIZ0ooasRLm9u4B2dj_LWIkOb8wZ8643D4T9iaqn01IAXtfjcgNyXJ82soL2Mr3okLO2pyIUQAarvwO1VDrCJT4hm2gqwYF5l9peqEubPYUrpyaQObcbv8XKd76SBAOEG-SEu9gKeua31moQy2MlaxhWya9V8m95lhLbJ9KvI5WMDDr4G62Lji-OY4pBiZhDMpX4ThyB-U4RUuDIP9SGGZ-DDwdEPtdZn5ZWWhIfpubqs2C96zeDeWge-gb9Zpn36bHiKJjEi4-ir3ICOqFxm3MISFewsMXMukLTD7F_mMe2uNub9L7qAFCK-SLc4ce8Eg6obuX4GiNFqxmzKOaDF-H-Fj2WbUchDw_oiPmJ26zZ4bcXlKmylJnSMi1jTgS_kqidVq.5BKAKfqWCcHKHElfRfebX2eccio8rkv7viqbqJZ7KUY",
+    "twoFactorAuthenticationTicket": null,
+    "profileId": "555c21f0-3ad0-4dcb-a457-a6698e4fab4f",
+    "userId": "555c21f0-3ad0-4dcb-a457-a6698e4fab4f",
+    "nameOnPlatform": "guest-Rdng6ubp",
+    "environment": "Prod",
+    "expiration": "2024-10-11T14:24:43.4378555Z",
+    "spaceId": "15c3db50-f590-4ddf-98ee-69904dfbc546",
+    "clientIp": "180.253.71.20",
+    "clientIpCountry": "ID",
+    "serverTime": "2024-10-11T11:24:43.4407415Z",
+    "sessionId": "3bc8a076-4674-473d-933b-2d0b6df831f4",
+    "sessionKey": "lrV4vjgrgy4XW3P5ngAvRQm6PCHC9OPNX8R6jaXuxnVSjkVOVt05FpqFiwXvUtpoIzadmQxMNTKslVOSeJHsPg==",
+    "rememberMeTicket": "ewogICJ0eXAiOiAiSldFIiwKICAiZW5jIjogIkExMjhDQkMiLAogICJpdiI6ICJKQUJaVkJsMnlTcGdScjZra0paSWtBIiwKICAiemlwIjogIkRFRiIsCiAgImludCI6ICJIUzI1NiIsCiAgImtpZCI6ICIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiCn0.9VR3YfzT5LE0rrWyosygal9mkF0M06Ql_uhhjJlaiK4Quu_tc1RaAav-nLuv5HbG1fLKgzBar2cm-qRNannZNjclvyHLiDNS6XOvkTMVktjcm1WkNxANSYeHYYQqd-h3DUgdwjimlduuXkGemjcEb2XcL6MpIgCxy2d4kqw-G0lr0APOZ4uHMhrzMGW-Lr2pLJXJ_o-_akdkekOxZdX1KqHJ4Ja6L6PUzbU8Fel5DTClvTNq7lH5Vr4SEp5MNEVrd7z3_L7ZmcUpMXS_dAQ56n-4KWL83CamR-vat2ibkpO3WKY-ZYjdF-lHLXm4wuaK-XfBGAvu7eXqp4IneTk6JIwY09ib0WqmBdtWMHdhgzeEumpmVg7HekoRmPJJhGBFWhOSLs00tz1v8x4h8-yIWAoT2A-W3X0mMEBKlbhed5O36cCp-Irs_GLXd1GrSgdxSIJ32xGvVlVZ96aLUkwQKQ.5S2BVEYmOL8sxFZ0JZvPq4Cu3ORU5mjz6_9A4hm-5BQ"
+}
+// get account 
+
+curl 'https://public-ubiservices.ubi.com/v3/users/me' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'authorization: Ubi_v1 t=ewogICJ2ZXIiOiAiMSIsCiAgImFpZCI6ICJhZmI0YjQzYy1mMWY3LTQxYjctYmNlZi1hNjM1ZDhjODM4MjIiLAogICJlbnYiOiAiUHJvZCIsCiAgInNpZCI6ICIzYmM4YTA3Ni00Njc0LTQ3M2QtOTMzYi0yZDBiNmRmODMxZjQiLAogICJ0eXAiOiAiSldFIiwKICAiZW5jIjogIkExMjhDQkMiLAogICJpdiI6ICJMYVhuMDhHdTZEOWVPTUEtQlRQb19BIiwKICAiaW50IjogIkhTMjU2IiwKICAia2lkIjogIjBjNjlhMGE1LWZjZjQtNDY3ZC05ZThkLTgyZWMzZDkzY2EzZSIKfQ.HNP1JqYlKULeadnSWegjd8QSF4mQVH8Wg8NbKV42qoElRESm_g4tC4aTCU5xTtgBOtFlWkGeiYsBy6erXLYKYSCqGJpTLUliTdd2xwHFgYZGm2Jpe0w8KUaqx6ZFdCVX7o7x7pNM0NnhhX5mWnIxPNR6K67I8DpoCF3S5wJJ_qI7Mb7WI8ZXXH9YxELwZV1tTyFTZaHLwKDTV_11xGSB0rH6YlweMEoUZgIC1bG9Erh018zhWr6jeBSWlSZoNLOVxIpm8HWEuZkbkAfdis3Aj40rL5jICWAlvPW_oDWq-ygkjagP6b3Qvc2RMs2clWrq3sbEiO1v3XObnKcntOUEuNGbpyLl_5xhKw7rWSYeh-ev07RhXq636T-Dy7yOv-A6pTPSf_zPnwiM2dGJp4HBbbgaVtFgc3M9fcv2p7k7iJUyAxVmuP2hQO-QGnPNAu7psid5uJC8ZWNBZyagTErdkGNEIY21Hr24LlBrYYGOG1DrHDJI1vQ3h43AyQ7qjkv4skHbx_FOp81tHbHJU9RxbGXXANcwBx19iuWiNnGF9Cf5oZ0JMUQkDWyHkcMjYwkOntRc9iYEpQfudpZZ1yYg-4-9AG216L_PpO7czGusmDC6n2BZl9qzgrOpJxXx9mJVVuDJ7N3EtHLVLXfywy3wq-h8Th4mtNaDGlUUz4PxSyrVF2Xj2Hj9LNmxtwjoJXP9GKcwISvwU2QtjzR_sQBmfrXIzisRVJ97cQ020RLCT1VRbf6m-NCLJuZtA1IlZsd6iflr1flE-S1wGIax9rX6ftQrg9GwA_1RPaivj3aGbiS27nZLcrrC_qM5lPj10uLyPEBwt2H7o7H4MWiX0YZC4yh9szNZpPNKM2XeqciRUNHf9UMnkPDKmthCeXa-L3mrq8TcrPd2qrBWefAS3oXqupm46w5TU8OUwAulM3Ql_iQ0ypPq46m0fcqfe0MM5W5EG1-E6pLe9plab9CV0Lv53q4bOsrdBEl1kp0abd5AWJ8hPicW0CoNLBsIcRE3sYXgvkq5pet4yqe5q7ueNjeru73RTyJ2Yh35QWj94ta_Zl3qU4DFMngcjkDFgMYmwXyBTjnCzbxccqYPrzrc6bl4Xgu9Ufcim9fczP1n_U8xjnYp_rAqw3uEudEUVrqPKcR2Z8CTBkX-Zq3IpErJ6eglgwBdbTbYLLZeoVp7SlvXq_N2u31BhxqD9aZp_DDJPu0YQCj_S3udvvqzS-MMIdVO-B7rbHk3HSAjHOwDiakUh_Nk76BsxPVcbvpRkdTBoHOmrvw8_WhoV-xEQZEee5lbNHm0lbr3OF6BrxcZXrwj85b0zWhQwyf2xpqP1EVTO-EISFUnv42RgoFuDJT06TuRpvPNi71LbR_exrnaMiXxltvywYQL36xIrUZThNLpKyGCrnYkpiWgfPnj6fprao8kmpvyB-EtkNc93ENX9tHqjSuZaEl7cdphNi-sC9tjvx4SFjcZtfQD5BszLEwx9pfrcnhglHRg0D_8VeXVCWV_72K7uQO23KAWwIAFUWhIZ0ooasRLm9u4B2dj_LWIkOb8wZ8643D4T9iaqn01IAXtfjcgNyXJ82soL2Mr3okLO2pyIUQAarvwO1VDrCJT4hm2gqwYF5l9peqEubPYUrpyaQObcbv8XKd76SBAOEG-SEu9gKeua31moQy2MlaxhWya9V8m95lhLbJ9KvI5WMDDr4G62Lji-OY4pBiZhDMpX4ThyB-U4RUuDIP9SGGZ-DDwdEPtdZn5ZWWhIfpubqs2C96zeDeWge-gb9Zpn36bHiKJjEi4-ir3ICOqFxm3MISFewsMXMukLTD7F_mMe2uNub9L7qAFCK-SLc4ce8Eg6obuX4GiNFqxmzKOaDF-H-Fj2WbUchDw_oiPmJ26zZ4bcXlKmylJnSMi1jTgS_kqidVq.5BKAKfqWCcHKHElfRfebX2eccio8rkv7viqbqJZ7KUY' \
+  -H 'origin: https://account.ubisoft.com' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://account.ubisoft.com/' \
+  -H 'sec-ch-ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'ubi-appid: c5393f10-7ac7-4b4f-90fa-21f8f3451a04' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+
